@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "0da57a48-b206-4de7-a1b9-a52e36fa49f2",
+		"name": "EXO2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48076348",
+		"_collection_link": "https://touriamina123-4839631.postman.co/workspace/Amina-Touri's-Workspace~76d30e64-26c3-4891-8746-779668e2e18c/collection/48076348-0da57a48-b206-4de7-a1b9-a52e36fa49f2?action=share&source=collection_link&creator=48076348"
+	},
+	"item": [
+		{
+			"name": "AddNewClients",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set('l_name', pm.iterationData.get(\"lastname\"));\r",
+							"pm.collectionVariables.set('f_name', pm.iterationData.get(\"firstname\"));\r",
+							"pm.collectionVariables.set('DataAddress', JSON.stringify(pm.iterationData.get(\"address\")));\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lastname\": \"{{l_name}}\",\r\n    \"firstname\": \"{{f_name}}\",\r\n    \"address\": {{DataAddress}}\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{PP}}.mockapi.io/testapi/api/v1/clients",
+					"protocol": "https",
+					"host": [
+						"{{PP}}",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"testapi",
+						"api",
+						"v1",
+						"clients"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "l_name",
+			"value": ""
+		},
+		{
+			"key": "f_name",
+			"value": ""
+		},
+		{
+			"key": "DataAddress",
+			"value": ""
+		}
+	]
+}

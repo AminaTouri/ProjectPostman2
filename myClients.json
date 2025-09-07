@@ -1,0 +1,32 @@
+[
+    {
+        "lastname": "Touri",
+        "firstname": "Amina",
+        "address": {
+            "numStreet": 15,
+            "streetName": "Champs-Élysées",
+            "postalCode": "75001",
+            "city": "Paris"
+        }
+    },
+    {
+        "lastname": "Martin",
+        "firstname": "Jean",
+        "address": {
+            "numStreet": 22,
+            "streetName": "Rue de Rivoli",
+            "postalCode": "75004",
+            "city": "Paris"
+        }
+    },
+    {
+        "lastname": "Durand",
+        "firstname": "Hugo",
+        "address": {
+            "numStreet": 10,
+            "streetName": "Boulevard Saint-Germain",
+            "postalCode": "75005",
+            "city": "Paris"
+        }
+    }
+]
